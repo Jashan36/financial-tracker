@@ -1,0 +1,16 @@
+Date,Description,Amount,Type,Category
+2024-01-15,Café Central,€12.50,Debit,Food
+2024-01-14,Shell Gas Station,€65.20,Debit,Transport
+2024-01-13,Amazon.de Purchase,€89.99,Debit,Shopping
+2024-01-12,Salary Deposit,€4500.00,Credit,Income
+2024-01-11,Netflix Subscription,€15.99,Debit,Entertainment
+2024-01-10,REWE Grocery,€125.75,Debit,Food
+2024-01-09,Uber Ride,€18.50,Debit,Transport
+2024-01-08,Electricity Bill,€185.00,Debit,Utilities
+2024-01-07,Zara Shopping,€245.00,Debit,Shopping
+2024-01-06,Restaurant Dinner,€85.50,Debit,Food
+2024-01-05,Gym Membership,€49.99,Debit,Health
+2024-01-04,Spotify Premium,€9.99,Debit,Entertainment
+2024-01-03,Bookstore Purchase,€35.00,Debit,Education
+2024-01-02,Insurance Payment,€125.00,Debit,Insurance
+2024-01-01,New Year Dinner,€165.00,Debit,Food
