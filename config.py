@@ -27,9 +27,9 @@ class Config:
     MODELS_FOLDER.mkdir(exist_ok=True)
     LOGS_FOLDER.mkdir(exist_ok=True)
     
-    # Flask settings
+    # Application settings
     SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
-    DEBUG = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
     
     # File upload settings
     MAX_CONTENT_LENGTH = 100 * 1024 * 1024  # 100MB to accommodate larger files
@@ -80,7 +80,7 @@ class Config:
         'handlers': {
             'wsgi': {
                 'class': 'logging.StreamHandler',
-                'stream': 'ext://flask.logging.wsgi_errors_stream',
+                'stream': 'ext://sys.stderr',
                 'formatter': 'default'
             },
             'file': {
@@ -124,7 +124,7 @@ class Config:
     @classmethod
     def get_environment_config(cls) -> Dict[str, Any]:
         """Get configuration based on environment"""
-        env = os.environ.get('FLASK_ENV', 'development')
+        env = os.environ.get('ENVIRONMENT', 'development')
         
         if env == 'production':
             return {
@@ -175,5 +175,5 @@ config_map = {
 def get_config(config_name=None):
     """Get configuration class based on environment"""
     if config_name is None:
-        config_name = os.environ.get('FLASK_ENV', 'default')
+        config_name = os.environ.get('ENVIRONMENT', 'default')
     return config_map.get(config_name, DevelopmentConfig)

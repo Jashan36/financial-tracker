@@ -93,8 +93,8 @@ def main():
     print("\n🎉 Installation completed!")
     print("\n💡 Next steps:")
     print("   1. Run: python start.py")
-    print("   2. Or run: python app.py")
-    print("   3. Open browser to: http://localhost:5000")
+    print("   2. Or run: streamlit run streamlit_app.py")
+    print("   3. Open browser to: http://localhost:8501")
     
     if failed_imports:
         print(f"\n⚠️  Note: Some packages ({', '.join(failed_imports)}) failed to install.")

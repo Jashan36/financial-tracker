@@ -30,8 +30,8 @@ FROM python:3.11-slim as production
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PATH="/opt/venv/bin:$PATH" \
-    FLASK_ENV=production \
-    FLASK_DEBUG=False
+    ENVIRONMENT=production \
+    DEBUG=False
 
 # Create app user for security
 RUN groupadd -r appuser && useradd -r -g appuser appuser
@@ -56,11 +56,11 @@ RUN python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
 USER appuser
 
 # Expose port
-EXPOSE 5000
+EXPOSE 8501
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD python -c "import requests; requests.get('http://localhost:5000/health')" || exit 1
+    CMD python -c "import requests; requests.get('http://localhost:8501')" || exit 1
 
 # Command to run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "2", "--timeout", "120", "--preload", "app:app"]
+CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]

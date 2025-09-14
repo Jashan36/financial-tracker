@@ -54,7 +54,7 @@ def install_dependencies():
             try:
                 # Install core packages individually
                 packages = [
-                    "flask>=2.3.3",
+                    "streamlit>=1.28.0",
                     "pandas>=2.2.0", 
                     "numpy>=1.26.0",
                     "nltk>=3.8.1",
@@ -64,7 +64,10 @@ def install_dependencies():
                     "seaborn>=0.13.0",
                     "scikit-learn>=1.4.0",
                     "python-dotenv>=1.0.0",
-                    "flask-cors>=4.0.0"
+                    "psutil>=5.9.0",
+                    "dask>=2023.1.0",
+                    "openpyxl>=3.1.0",
+                    "requests>=2.31.0"
                 ]
                 
                 for package in packages:
@@ -86,7 +89,7 @@ def test_imports():
     print("🧪 Testing package imports...")
     
     required_packages = [
-        'flask', 'pandas', 'numpy', 'matplotlib', 'seaborn', 
+        'streamlit', 'pandas', 'numpy', 'matplotlib', 'seaborn', 
         'plotly', 'scikit-learn', 'nltk', 'pdfplumber'
     ]
     
@@ -108,17 +111,17 @@ def test_imports():
     return True
 
 def start_application():
-    """Start the Flask application"""
+    """Start the Streamlit application"""
     print("🚀 Starting Financial Tracker application...")
     
     try:
-        # Check if app.py exists
-        if not os.path.exists("app.py"):
-            print("❌ app.py not found in current directory")
+        # Check if streamlit_app.py exists
+        if not os.path.exists("streamlit_app.py"):
+            print("❌ streamlit_app.py not found in current directory")
             return False
         
         # Start the application
-        subprocess.run([sys.executable, "app.py"])
+        subprocess.run([sys.executable, "-m", "streamlit", "run", "streamlit_app.py"])
         return True
         
     except KeyboardInterrupt:

@@ -6,9 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5000:5000"
+      - "8501:8501"
     environment:
-      - FLASK_ENV=production
+      - ENVIRONMENT=production
       - SECRET_KEY=${SECRET_KEY:-change-this-in-production}
       - DATABASE_URL=sqlite:///financial_tracker.db
     volumes:
@@ -17,7 +17,7 @@ services:
       - ./logs:/app/logs
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:5000/health')"]
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8501')"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -67,14 +67,14 @@ services:
       dockerfile: Dockerfile
       target: builder
     ports:
-      - "5000:5000"
+      - "8501:8501"
     environment:
-      - FLASK_ENV=development
-      - FLASK_DEBUG=True
+      - ENVIRONMENT=development
+      - DEBUG=True
       - SECRET_KEY=dev-secret-key
     volumes:
       - .:/app
       - ./data:/app/data
       - ./logs:/app/logs
-    command: ["python", "app.py"]
+    command: ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
     restart: unless-stopped
