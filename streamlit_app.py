@@ -391,6 +391,10 @@ def main():
                             st.error(f"❌ Analysis failed: {str(e)}")
                             logger.error(f"Analysis error: {str(e)}")
                             logger.error(f"Traceback: {traceback.format_exc()}")
+                            
+                            # Show more detailed error information
+                            with st.expander("🔍 Error Details"):
+                                st.code(traceback.format_exc())
             
             # Currency conversion
             st.subheader("💱 Currency Conversion")
@@ -628,25 +632,79 @@ def main():
                             if budget_recommendations and isinstance(budget_recommendations, dict) and 'error' not in budget_recommendations:
                                 st.subheader("🎯 Budget Recommendations")
                                 
-                                if 'recommendations' in budget_recommendations:
-                                    recommendations = budget_recommendations['recommendations']
+                                # Budget summary
+                                if 'monthly_income' in budget_recommendations:
+                                    col1, col2, col3 = st.columns(3)
+                                    with col1:
+                                        st.metric("Monthly Income", budget_recommendations.get('monthly_income_formatted', 'N/A'))
+                                    with col2:
+                                        total_recommended = sum(data.get('recommended', 0) for data in budget_recommendations.get('recommended_budgets', {}).values())
+                                        st.metric("Total Recommended Budget", format_currency(total_recommended, budget_recommendations.get('currency', 'USD')))
+                                    with col3:
+                                        total_current = sum(data.get('current', 0) for data in budget_recommendations.get('recommended_budgets', {}).values())
+                                        st.metric("Current Spending", format_currency(total_current, budget_recommendations.get('currency', 'USD')))
+                                
+                                # Note about current spending
+                                total_current = sum(data.get('current', 0) for data in budget_recommendations.get('recommended_budgets', {}).values())
+                                if total_current == 0:
+                                    st.info("ℹ️ **Note:** Current spending shows $0 because your transactions might not be categorized into the standard budget categories. The budget recommendations are based on your income and standard spending percentages.")
+                                
+                                # Debug information for budget recommendations
+                                if st.checkbox("🔍 Show Budget Debug Info"):
+                                    st.json(budget_recommendations)
+                                
+                                if 'recommended_budgets' in budget_recommendations:
+                                    recommendations = budget_recommendations['recommended_budgets']
                                     
+                                    # Create budget comparison chart
+                                    if recommendations:
+                                        chart_data = []
+                                        for category, data in recommendations.items():
+                                            if data.get('recommended', 0) > 0:  # Only show categories with recommendations
+                                                chart_data.append({
+                                                    'Category': category.title(),
+                                                    'Recommended': data.get('recommended', 0),
+                                                    'Current': data.get('current', 0)
+                                                })
+                                        
+                                        if chart_data:
+                                            df_budget = pd.DataFrame(chart_data)
+                                            
+                                            # Create comparison chart
+                                            fig = px.bar(
+                                                df_budget.melt(id_vars=['Category'], var_name='Type', value_name='Amount'),
+                                                x='Category',
+                                                y='Amount',
+                                                color='Type',
+                                                title='Budget vs Current Spending',
+                                                labels={'Amount': 'Amount ($)', 'Category': 'Category'},
+                                                barmode='group'
+                                            )
+                                            fig.update_layout(yaxis_tickformat='$,.0f')
+                                            st.plotly_chart(fig, use_container_width=True)
+                                    
+                                    # Category details
                                     for category, data in recommendations.items():
-                                        with st.expander(f"💡 {category}"):
-                                            col1, col2 = st.columns(2)
-                                            
-                                            with col1:
-                                                st.write(f"**Recommended:** {data.get('formatted_recommended', 'N/A')}")
-                                                st.write(f"**Current:** {data.get('formatted_current', 'N/A')}")
-                                            
-                                            with col2:
-                                                status = data.get('status', 'Unknown')
-                                                if 'Over Budget' in status:
-                                                    st.error(f"⚠️ {status}")
-                                                elif 'Under Budget' in status:
-                                                    st.success(f"✅ {status}")
-                                                else:
-                                                    st.info(f"ℹ️ {status}")
+                                        if data.get('recommended', 0) > 0:  # Only show categories with recommendations
+                                            with st.expander(f"💡 {category.title()}"):
+                                                col1, col2, col3 = st.columns(3)
+                                                
+                                                with col1:
+                                                    st.write(f"**Recommended:** {data.get('formatted_recommended', 'N/A')}")
+                                                    st.write(f"**% of Income:** {data.get('percentage_of_income', 0)}%")
+                                                
+                                                with col2:
+                                                    st.write(f"**Current:** {data.get('formatted_current', 'N/A')}")
+                                                    st.write(f"**Difference:** {data.get('formatted_difference', 'N/A')}")
+                                                
+                                                with col3:
+                                                    status = data.get('status', 'Unknown')
+                                                    if 'Over Budget' in status:
+                                                        st.error(f"⚠️ {status}")
+                                                    elif 'Under Budget' in status:
+                                                        st.success(f"✅ {status}")
+                                                    else:
+                                                        st.info(f"ℹ️ {status}")
                             
                             # Alerts
                             if 'alerts' in budget_recommendations:
@@ -669,6 +727,17 @@ def main():
                                         else:
                                             # Handle string alerts
                                             st.warning(str(alert))
+                            else:
+                                # Fallback when budget recommendations are missing or have errors
+                                st.subheader("🎯 Budget Recommendations")
+                                if budget_recommendations and 'error' in budget_recommendations:
+                                    st.error(f"❌ Budget recommendations failed: {budget_recommendations['error']}")
+                                else:
+                                    st.warning("⚠️ No budget recommendations available. This might be due to insufficient data or missing income information.")
+                                    
+                                    # Show debug info
+                                    with st.expander("🔍 Debug Budget Data"):
+                                        st.json(budget_recommendations if budget_recommendations else "No budget recommendations data")
                         
                     except Exception as e:
                         st.error(f"❌ Error displaying analysis results: {str(e)}")

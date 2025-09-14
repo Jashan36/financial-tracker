@@ -5,6 +5,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 import plotly.utils
 import json
+import logging
+
+logger = logging.getLogger(__name__)
 
 class BudgetAnalyzer:
     def __init__(self):
@@ -192,26 +195,26 @@ class BudgetAnalyzer:
             df['date'] = pd.to_datetime(df['date'])
             df['amount'] = pd.to_numeric(df['amount'])
         except Exception as e:
-            print(f"Error creating DataFrame: {e}")
+            logger.error(f"Error creating DataFrame: {e}")
             return {'error': f'Failed to process transaction data: {str(e)}'}
         
         try:
-            print(f"DataFrame shape: {df.shape}")
-            print(f"Amount range: {df['amount'].min()} to {df['amount'].max()}")
-            print(f"Sample amounts: {df['amount'].head().tolist()}")
+            logger.info(f"DataFrame shape: {df.shape}")
+            logger.info(f"Amount range: {df['amount'].min()} to {df['amount'].max()}")
+            logger.debug(f"Sample amounts: {df['amount'].head().tolist()}")
             
             # Get currency information
             currencies = df['currency'].unique() if 'currency' in df.columns else ['USD']
             primary_currency = currencies[0] if len(currencies) == 1 else self._determine_primary_currency(df)
             
-            print(f"Currencies found: {currencies}")
-            print(f"Primary currency: {primary_currency}")
+            logger.info(f"Currencies found: {currencies}")
+            logger.info(f"Primary currency: {primary_currency}")
             
             # Filter out credits (income)
             expenses = df[df['amount'] < 0].copy()
             expenses['amount'] = expenses['amount'].abs()
             
-            print(f"Expenses count: {len(expenses)}")
+            logger.info(f"Expenses count: {len(expenses)}")
             
             if expenses.empty:
                 return {'message': 'No expenses found in transactions', 'currency': primary_currency}
@@ -255,9 +258,9 @@ class BudgetAnalyzer:
             return analysis
             
         except Exception as e:
-            print(f"Error in analyze_spending analysis: {e}")
+            logger.error(f"Error in analyze_spending analysis: {e}")
             import traceback
-            traceback.print_exc()
+            logger.error(f"Traceback: {traceback.format_exc()}")
             return {'error': f'Failed to analyze spending patterns: {str(e)}'}
     
     def _determine_primary_currency(self, df):
@@ -278,24 +281,24 @@ class BudgetAnalyzer:
             # Use volume-based detection (more reliable for financial data)
             if not currency_totals.empty:
                 primary_currency = currency_totals.idxmax()
-                print(f"Primary currency determined by volume: {primary_currency} (total: {currency_totals[primary_currency]:,.2f})")
+                logger.info(f"Primary currency determined by volume: {primary_currency} (total: {currency_totals[primary_currency]:,.2f})")
                 return primary_currency
             
             # Fallback to frequency-based detection
             elif not currency_counts.empty:
                 primary_currency = currency_counts.index[0]  # Most frequent currency
-                print(f"Primary currency determined by frequency: {primary_currency} (count: {currency_counts.iloc[0]})")
+                logger.info(f"Primary currency determined by frequency: {primary_currency} (count: {currency_counts.iloc[0]})")
                 return primary_currency
             
             # Final fallback
             else:
-                print("No currency data found, defaulting to USD")
+                logger.warning("No currency data found, defaulting to USD")
                 return 'USD'
                 
         except Exception as e:
-            print(f"Could not determine primary currency: {e}")
+            logger.error(f"Could not determine primary currency: {e}")
             import traceback
-            traceback.print_exc()
+            logger.error(f"Traceback: {traceback.format_exc()}")
             return 'USD'  # Default fallback
     
     def generate_recommendations(self, transactions, primary_currency=None):
@@ -308,7 +311,7 @@ class BudgetAnalyzer:
             df['date'] = pd.to_datetime(df['date'])
             df['amount'] = pd.to_numeric(df['amount'])
         except Exception as e:
-            print(f"Error creating DataFrame in generate_recommendations: {e}")
+            logger.error(f"Error creating DataFrame in generate_recommendations: {e}")
             return {'error': f'Failed to process transaction data: {str(e)}'}
         
         try:
@@ -393,15 +396,15 @@ class BudgetAnalyzer:
             return recommendations
             
         except Exception as e:
-            print(f"Error in generate_recommendations analysis: {e}")
+            logger.error(f"Error in generate_recommendations analysis: {e}")
             import traceback
-            traceback.print_exc()
+            logger.error(f"Traceback: {traceback.format_exc()}")
             return {'error': f'Failed to generate budget recommendations: {str(e)}'}
     
     def create_monthly_spending_chart(self, transactions, primary_currency=None):
         """Create monthly spending trend chart with proper currency support"""
         if not transactions:
-            print("No transactions provided for monthly chart")
+            logger.warning("No transactions provided for monthly chart")
             return {}
         
         df = pd.DataFrame(transactions)
@@ -412,24 +415,24 @@ class BudgetAnalyzer:
         if primary_currency is None:
             primary_currency = self._determine_primary_currency(df)
         
-        print(f"Monthly chart - DataFrame shape: {df.shape}")
-        print(f"Monthly chart - Amount range: {df['amount'].min()} to {df['amount'].max()}")
-        print(f"Monthly chart - Primary currency: {primary_currency}")
+        logger.info(f"Monthly chart - DataFrame shape: {df.shape}")
+        logger.info(f"Monthly chart - Amount range: {df['amount'].min()} to {df['amount'].max()}")
+        logger.info(f"Monthly chart - Primary currency: {primary_currency}")
         
         # Filter expenses and group by month
         expenses = df[df['amount'] < 0].copy()
         expenses['amount'] = expenses['amount'].abs()
         
-        print(f"Monthly chart - Expenses count: {len(expenses)}")
+        logger.info(f"Monthly chart - Expenses count: {len(expenses)}")
         
         if expenses.empty:
-            print("No expenses found for monthly chart")
+            logger.warning("No expenses found for monthly chart")
             return {}
         
         monthly_data = expenses.groupby(expenses['date'].dt.to_period('M'))['amount'].sum().reset_index()
         monthly_data['date'] = monthly_data['date'].astype(str)
         
-        print(f"Monthly chart - Monthly data: {monthly_data}")
+        logger.debug(f"Monthly chart - Monthly data: {monthly_data}")
         
         # Format currency label
         currency_label = f"Total Spending ({primary_currency})"
@@ -446,7 +449,7 @@ class BudgetAnalyzer:
         )
         
         chart_json = json.loads(fig.to_json())
-        print(f"Monthly chart - Chart JSON keys: {list(chart_json.keys())}")
+        logger.debug(f"Monthly chart - Chart JSON keys: {list(chart_json.keys())}")
         return chart_json
     
     def create_category_chart(self, transactions, primary_currency=None):

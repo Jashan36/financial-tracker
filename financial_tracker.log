@@ -1617,3 +1617,441 @@
 2025-09-14 16:47:47,126 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
 2025-09-14 16:47:47,142 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
 2025-09-14 16:47:47,142 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:50:12,703 - __main__ - INFO - Initializing processors...
+2025-09-14 16:50:15,759 - transaction_processor - INFO - Loaded existing categorization model
+2025-09-14 16:53:54,108 - __main__ - INFO - Processing file: synthetic_bank_statement.csv
+2025-09-14 16:53:54,120 - __main__ - INFO - File saved to: C:\Users\91918\AppData\Local\Temp\tmpg9sj77jg.csv
+2025-09-14 16:53:54,120 - __main__ - INFO - Attempting to process CSV with utf-8-sig encoding
+2025-09-14 16:53:54,192 - transaction_processor - INFO - Processing file: tmpg9sj77jg.csv (40.7KB)
+2025-09-14 16:53:54,192 - transaction_processor - INFO - Processing CSV file: 40.7KB
+2025-09-14 16:53:54,198 - transaction_processor - INFO - CSV loaded: 500 rows, 8 columns
+2025-09-14 16:53:54,203 - transaction_processor - INFO - Columns: ['Date', 'Description', 'Category', 'Amount', 'Currency', 'Type', 'Payment Method', 'Balance']
+2025-09-14 16:53:54,230 - transaction_processor - INFO - Sample data:
+         Date             Description       Category    Amount Currency     Type Payment Method   Balance
+0  08-01-2025      Transport purchase      Transport   1728.55      INR  Expense           Cash   8271.45
+1  16-04-2025  Entertainment purchase  Entertainment    764.12      INR  Expense    Net Banking   7507.33
+2  05-06-2025         Health purchase         Health    301.91      INR  Expense           Card   7205.42
+3  19-03-2025  Food & Dining purchase  Food & Dining   4037.16      INR  Expense           Cash   3168.26
+4  26-01-2025           Salary credit         Salary  35432.48      INR   Income           Cash  38600.74
+2025-09-14 16:53:54,624 - transaction_processor - INFO - Successfully processed 500 transactions from CSV (rejected 0 rows)
+2025-09-14 16:53:54,635 - transaction_processor - INFO - Successfully validated 500 transactions (rejected 0)
+2025-09-14 16:53:54,637 - transaction_processor - INFO - Successfully processed 500 valid transactions from tmpg9sj77jg.csv
+2025-09-14 16:53:54,637 - __main__ - INFO - Successfully processed CSV with utf-8-sig encoding
+2025-09-14 16:53:54,639 - __main__ - INFO - Successfully extracted 500 transactions
+2025-09-14 16:53:54,641 - __main__ - INFO - Primary currency detected: USD
+2025-09-14 16:54:00,395 - __main__ - INFO - Starting analysis of 500 transactions
+2025-09-14 16:54:00,441 - __main__ - INFO - Analysis completed successfully
+2025-09-14 16:54:28,884 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:28,894 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:29,223 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:29,223 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:30,122 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:30,122 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:31,064 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:31,064 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:31,987 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:31,987 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:32,914 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:32,914 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:33,868 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:33,868 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:34,774 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:34,774 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:35,700 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:35,702 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:36,616 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:36,616 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:37,565 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:37,571 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:38,445 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:38,445 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:38,858 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:38,858 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:39,774 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:39,774 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:40,797 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:40,797 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:41,695 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:41,695 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:42,643 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:42,645 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:43,494 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:43,494 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:44,377 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:44,389 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:44,650 - __main__ - INFO - Processing file: synthetic_bank_statement.csv
+2025-09-14 16:54:44,660 - __main__ - INFO - File saved to: C:\Users\91918\AppData\Local\Temp\tmp8r95_rsa.csv
+2025-09-14 16:54:44,662 - __main__ - INFO - Attempting to process CSV with utf-8-sig encoding
+2025-09-14 16:54:44,719 - transaction_processor - INFO - Processing file: tmp8r95_rsa.csv (40.7KB)
+2025-09-14 16:54:44,719 - transaction_processor - INFO - Processing CSV file: 40.7KB
+2025-09-14 16:54:44,731 - transaction_processor - INFO - CSV loaded: 500 rows, 8 columns
+2025-09-14 16:54:44,731 - transaction_processor - INFO - Columns: ['Date', 'Description', 'Category', 'Amount', 'Currency', 'Type', 'Payment Method', 'Balance']
+2025-09-14 16:54:44,746 - transaction_processor - INFO - Sample data:
+         Date             Description       Category    Amount Currency     Type Payment Method   Balance
+0  08-01-2025      Transport purchase      Transport   1728.55      INR  Expense           Cash   8271.45
+1  16-04-2025  Entertainment purchase  Entertainment    764.12      INR  Expense    Net Banking   7507.33
+2  05-06-2025         Health purchase         Health    301.91      INR  Expense           Card   7205.42
+3  19-03-2025  Food & Dining purchase  Food & Dining   4037.16      INR  Expense           Cash   3168.26
+4  26-01-2025           Salary credit         Salary  35432.48      INR   Income           Cash  38600.74
+2025-09-14 16:54:45,065 - transaction_processor - INFO - Successfully processed 500 transactions from CSV (rejected 0 rows)
+2025-09-14 16:54:45,081 - transaction_processor - INFO - Successfully validated 500 transactions (rejected 0)
+2025-09-14 16:54:45,081 - transaction_processor - INFO - Successfully processed 500 valid transactions from tmp8r95_rsa.csv
+2025-09-14 16:54:45,081 - __main__ - INFO - Successfully processed CSV with utf-8-sig encoding
+2025-09-14 16:54:45,081 - __main__ - INFO - Successfully extracted 500 transactions
+2025-09-14 16:54:45,081 - __main__ - INFO - Primary currency detected: USD
+2025-09-14 16:54:45,276 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:45,276 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:46,230 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:46,235 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:47,143 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:47,143 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:48,063 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:48,063 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:48,995 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:48,995 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:49,887 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:49,887 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:50,223 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:50,238 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:51,139 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:51,139 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:52,039 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:52,039 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:52,938 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:52,938 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:53,856 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:53,866 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:54,821 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:54,821 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:55,851 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:55,851 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:56,775 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:56,775 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:57,629 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:57,632 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:58,517 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:58,517 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:54:59,430 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:54:59,432 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:00,314 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:00,314 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:01,220 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:01,222 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:01,560 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:01,560 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:02,500 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:02,500 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:03,424 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:03,427 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:04,223 - __main__ - INFO - Starting analysis of 500 transactions
+2025-09-14 16:55:04,251 - __main__ - INFO - Analysis completed successfully
+2025-09-14 16:55:04,428 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:04,428 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:04,768 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:04,768 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:05,784 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:05,784 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:06,717 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:06,717 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:07,093 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:07,093 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:08,141 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:08,143 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:09,019 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:09,022 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:09,973 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:09,973 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:10,891 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:10,891 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:11,923 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:11,926 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:12,955 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:12,955 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:13,901 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:13,901 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:14,811 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:14,811 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:15,690 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:15,692 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:16,025 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:16,025 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:16,925 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:16,925 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:17,828 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:17,828 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:18,727 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:18,729 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:19,644 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:19,648 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:20,630 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:20,630 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:20,949 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:20,949 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:21,958 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:21,958 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:22,890 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:22,894 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:23,793 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:23,793 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:24,677 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:24,677 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:25,584 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:25,584 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:26,054 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:26,054 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:26,951 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:26,951 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:27,305 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:27,305 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:28,207 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:28,211 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:29,120 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:29,120 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:30,008 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:30,008 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:30,915 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:30,915 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:31,250 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:31,250 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:32,134 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:32,134 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:33,016 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:33,033 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:33,980 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:33,980 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:34,851 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:34,859 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:35,269 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:35,269 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:36,197 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:36,197 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:37,048 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:37,049 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:37,415 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:37,415 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:38,303 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:38,303 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:38,642 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:38,642 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:39,574 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:39,574 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:39,909 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:39,909 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:40,847 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:40,847 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:41,745 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:41,745 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:42,594 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:42,594 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:43,445 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:43,445 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:44,373 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:44,373 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:45,260 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:45,260 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:46,135 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:46,141 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:47,024 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:47,025 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:47,903 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:47,903 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:48,231 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:48,234 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:48,564 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:48,564 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:49,480 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:49,480 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:50,390 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:50,390 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:51,271 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:51,271 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:52,270 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:52,270 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:52,586 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:52,586 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:52,906 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:52,917 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:53,759 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:53,759 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:54,659 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:54,659 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:54,968 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:54,968 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:55,876 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:55,876 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 16:55:56,728 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 16:55:56,728 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:00:39,669 - __main__ - INFO - Initializing processors...
+2025-09-14 17:00:43,782 - transaction_processor - INFO - Loaded existing categorization model
+2025-09-14 17:00:55,090 - __main__ - INFO - Processing file: synthetic_bank_statement.csv
+2025-09-14 17:00:55,092 - __main__ - INFO - File saved to: C:\Users\91918\AppData\Local\Temp\tmpc6hsc_ep.csv
+2025-09-14 17:00:55,103 - __main__ - INFO - Attempting to process CSV with utf-8-sig encoding
+2025-09-14 17:00:55,177 - transaction_processor - INFO - Processing file: tmpc6hsc_ep.csv (40.7KB)
+2025-09-14 17:00:55,181 - transaction_processor - INFO - Processing CSV file: 40.7KB
+2025-09-14 17:00:55,195 - transaction_processor - INFO - CSV loaded: 500 rows, 8 columns
+2025-09-14 17:00:55,195 - transaction_processor - INFO - Columns: ['Date', 'Description', 'Category', 'Amount', 'Currency', 'Type', 'Payment Method', 'Balance']
+2025-09-14 17:00:55,207 - transaction_processor - INFO - Sample data:
+         Date             Description       Category    Amount Currency     Type Payment Method   Balance
+0  08-01-2025      Transport purchase      Transport   1728.55      INR  Expense           Cash   8271.45
+1  16-04-2025  Entertainment purchase  Entertainment    764.12      INR  Expense    Net Banking   7507.33
+2  05-06-2025         Health purchase         Health    301.91      INR  Expense           Card   7205.42
+3  19-03-2025  Food & Dining purchase  Food & Dining   4037.16      INR  Expense           Cash   3168.26
+4  26-01-2025           Salary credit         Salary  35432.48      INR   Income           Cash  38600.74
+2025-09-14 17:00:55,554 - transaction_processor - INFO - Successfully processed 500 transactions from CSV (rejected 0 rows)
+2025-09-14 17:00:55,564 - transaction_processor - INFO - Successfully validated 500 transactions (rejected 0)
+2025-09-14 17:00:55,566 - transaction_processor - INFO - Successfully processed 500 valid transactions from tmpc6hsc_ep.csv
+2025-09-14 17:00:55,566 - __main__ - INFO - Successfully processed CSV with utf-8-sig encoding
+2025-09-14 17:00:55,566 - __main__ - INFO - Successfully extracted 500 transactions
+2025-09-14 17:00:55,568 - __main__ - INFO - Primary currency detected: USD
+2025-09-14 17:00:59,752 - __main__ - INFO - Starting analysis of 500 transactions
+2025-09-14 17:00:59,758 - budget_analyzer - INFO - DataFrame shape: (500, 7)
+2025-09-14 17:00:59,758 - budget_analyzer - INFO - Amount range: 109.61 to 49091.81
+2025-09-14 17:00:59,767 - budget_analyzer - INFO - Currencies found: ['USD']
+2025-09-14 17:00:59,767 - budget_analyzer - INFO - Primary currency: USD
+2025-09-14 17:00:59,767 - budget_analyzer - INFO - Expenses count: 0
+2025-09-14 17:00:59,792 - __main__ - INFO - Analysis completed successfully
+2025-09-14 17:02:51,944 - __main__ - INFO - Processing file: synthetic_bank_statement.csv
+2025-09-14 17:02:51,956 - __main__ - INFO - File saved to: C:\Users\91918\AppData\Local\Temp\tmpjfdbbqd2.csv
+2025-09-14 17:02:51,964 - __main__ - INFO - Attempting to process CSV with utf-8-sig encoding
+2025-09-14 17:02:52,064 - transaction_processor - INFO - Processing file: tmpjfdbbqd2.csv (40.7KB)
+2025-09-14 17:02:52,073 - transaction_processor - INFO - Processing CSV file: 40.7KB
+2025-09-14 17:02:52,098 - transaction_processor - INFO - CSV loaded: 500 rows, 8 columns
+2025-09-14 17:02:52,101 - transaction_processor - INFO - Columns: ['Date', 'Description', 'Category', 'Amount', 'Currency', 'Type', 'Payment Method', 'Balance']
+2025-09-14 17:02:52,131 - transaction_processor - INFO - Sample data:
+         Date             Description       Category    Amount Currency     Type Payment Method   Balance
+0  08-01-2025      Transport purchase      Transport   1728.55      INR  Expense           Cash   8271.45
+1  16-04-2025  Entertainment purchase  Entertainment    764.12      INR  Expense    Net Banking   7507.33
+2  05-06-2025         Health purchase         Health    301.91      INR  Expense           Card   7205.42
+3  19-03-2025  Food & Dining purchase  Food & Dining   4037.16      INR  Expense           Cash   3168.26
+4  26-01-2025           Salary credit         Salary  35432.48      INR   Income           Cash  38600.74
+2025-09-14 17:02:52,592 - transaction_processor - INFO - Successfully processed 500 transactions from CSV (rejected 0 rows)
+2025-09-14 17:02:52,598 - transaction_processor - INFO - Successfully validated 500 transactions (rejected 0)
+2025-09-14 17:02:52,598 - transaction_processor - INFO - Successfully processed 500 valid transactions from tmpjfdbbqd2.csv
+2025-09-14 17:02:52,603 - __main__ - INFO - Successfully processed CSV with utf-8-sig encoding
+2025-09-14 17:02:52,603 - __main__ - INFO - Successfully extracted 500 transactions
+2025-09-14 17:02:52,608 - __main__ - INFO - Primary currency detected: USD
+2025-09-14 17:02:56,361 - __main__ - INFO - Starting analysis of 500 transactions
+2025-09-14 17:02:56,373 - budget_analyzer - INFO - DataFrame shape: (500, 7)
+2025-09-14 17:02:56,378 - budget_analyzer - INFO - Amount range: 109.61 to 49091.81
+2025-09-14 17:02:56,382 - budget_analyzer - INFO - Currencies found: ['USD']
+2025-09-14 17:02:56,383 - budget_analyzer - INFO - Primary currency: USD
+2025-09-14 17:02:56,390 - budget_analyzer - INFO - Expenses count: 0
+2025-09-14 17:02:56,412 - __main__ - INFO - Analysis completed successfully
+2025-09-14 17:03:13,600 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:13,600 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:14,533 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:14,533 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:15,457 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:15,459 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:16,389 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:16,389 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:16,727 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:16,727 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:17,629 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:17,635 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:18,537 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:18,537 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:19,548 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:19,553 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:20,429 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:20,429 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:20,770 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:20,770 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:21,680 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:21,680 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:22,585 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:22,585 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:23,650 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:23,650 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:24,549 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:24,549 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:25,598 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:25,601 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:25,923 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:25,931 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:26,880 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:26,880 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:27,846 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:27,846 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:28,767 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:28,767 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:29,688 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:29,688 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:30,711 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:30,711 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:31,619 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:31,619 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:32,559 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:32,559 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:33,465 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:33,465 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:34,396 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:34,401 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:35,319 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:35,323 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:36,255 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:36,257 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:37,155 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:37,155 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:38,028 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:38,028 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:38,951 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:38,951 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:39,939 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:39,939 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:40,853 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:40,853 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:41,709 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:41,709 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:42,676 - __main__ - INFO - Processing file: synthetic_bank_statement.csv
+2025-09-14 17:03:42,686 - __main__ - INFO - File saved to: C:\Users\91918\AppData\Local\Temp\tmpzc830riz.csv
+2025-09-14 17:03:42,686 - __main__ - INFO - Attempting to process CSV with utf-8-sig encoding
+2025-09-14 17:03:42,688 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:42,688 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:42,746 - transaction_processor - INFO - Processing file: tmpzc830riz.csv (40.7KB)
+2025-09-14 17:03:42,748 - transaction_processor - INFO - Processing CSV file: 40.7KB
+2025-09-14 17:03:42,755 - transaction_processor - INFO - CSV loaded: 500 rows, 8 columns
+2025-09-14 17:03:42,755 - transaction_processor - INFO - Columns: ['Date', 'Description', 'Category', 'Amount', 'Currency', 'Type', 'Payment Method', 'Balance']
+2025-09-14 17:03:42,769 - transaction_processor - INFO - Sample data:
+         Date             Description       Category    Amount Currency     Type Payment Method   Balance
+0  08-01-2025      Transport purchase      Transport   1728.55      INR  Expense           Cash   8271.45
+1  16-04-2025  Entertainment purchase  Entertainment    764.12      INR  Expense    Net Banking   7507.33
+2  05-06-2025         Health purchase         Health    301.91      INR  Expense           Card   7205.42
+3  19-03-2025  Food & Dining purchase  Food & Dining   4037.16      INR  Expense           Cash   3168.26
+4  26-01-2025           Salary credit         Salary  35432.48      INR   Income           Cash  38600.74
+2025-09-14 17:03:43,138 - transaction_processor - INFO - Successfully processed 500 transactions from CSV (rejected 0 rows)
+2025-09-14 17:03:43,138 - transaction_processor - INFO - Successfully validated 500 transactions (rejected 0)
+2025-09-14 17:03:43,138 - transaction_processor - INFO - Successfully processed 500 valid transactions from tmpzc830riz.csv
+2025-09-14 17:03:43,138 - __main__ - INFO - Successfully processed CSV with utf-8-sig encoding
+2025-09-14 17:03:43,138 - __main__ - INFO - Successfully extracted 500 transactions
+2025-09-14 17:03:43,138 - __main__ - INFO - Primary currency detected: USD
+2025-09-14 17:03:43,614 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:43,614 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:44,519 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:44,519 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:45,406 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:45,406 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:46,391 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:46,392 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:47,326 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:47,326 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:47,718 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:47,719 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:48,635 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:48,635 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:49,563 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:49,563 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:50,464 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:50,464 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:51,359 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:51,359 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:52,275 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:52,275 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:53,169 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:53,169 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:54,183 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:54,183 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:55,118 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:55,118 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
+2025-09-14 17:03:56,107 - currency_converter - WARNING - API response indicates failure: {'success': False, 'error': {'code': 101, 'type': 'missing_access_key', 'info': 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]'}}
+2025-09-14 17:03:56,107 - currency_converter - WARNING - Using fallback exchange rate: USD -> INR = 83.0
