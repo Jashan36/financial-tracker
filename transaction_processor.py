@@ -1,5 +1,4 @@
 import pandas as pd
-import pdfplumber
 import re
 from datetime import datetime
 import nltk
@@ -17,7 +16,7 @@ from dataclasses import dataclass
 from pathlib import Path
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor
-import dask.dataframe as dd
+
 import multiprocessing
 import threading
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
@@ -203,7 +202,7 @@ class TransactionProcessor:
         
         # File validation settings
         self.max_file_size = 16 * 1024 * 1024  # 16MB
-        self.allowed_extensions = {'.csv', '.pdf'}
+        self.allowed_extensions = {'.csv'}
         self.required_csv_columns = {'date', 'description', 'amount'}
         
         # Load or initialize ML model
@@ -288,17 +287,13 @@ class TransactionProcessor:
                 df = pd.read_csv(file_path, nrows=5)  # Read first 5 rows for validation
                 if df.empty:
                     return False, "CSV file appears to be empty"
-            elif file_path.suffix.lower() == '.pdf':
-                with pdfplumber.open(file_path) as pdf:
-                    if not pdf.pages:
-                        return False, "PDF file has no pages"
         except Exception as e:
             return False, f"File appears to be corrupted: {str(e)}"
         
         return True, "File validation successful"
     
     def process_file(self, file_path: Union[str, Path], encoding: str = 'utf-8') -> List[Dict]:
-        """Process uploaded file (CSV or PDF) and return categorized transactions"""
+        """Process uploaded CSV file and return categorized transactions"""
         file_path = Path(file_path)
         
         # Validate file first
@@ -313,10 +308,8 @@ class TransactionProcessor:
             
             if file_extension == '.csv':
                 transactions = self._process_csv(file_path, encoding=encoding)
-            elif file_extension == '.pdf':
-                transactions = self._process_pdf(file_path)
             else:
-                raise ValidationError(f"Unsupported file format: {file_extension}")
+                raise ValidationError(f"Unsupported file format: {file_extension}. Only CSV files are supported.")
             
             # Validate processed transactions
             valid_transactions = self._validate_transactions(transactions)
@@ -588,169 +581,6 @@ class TransactionProcessor:
             
         except Exception as e:
             raise Exception(f"Error processing large CSV file: {str(e)}")
-    
-    def _process_pdf(self, file_path):
-        """Process PDF file and extract transactions with optimized processing"""
-        try:
-            if not os.path.exists(file_path):
-                raise FileNotFoundError(f"PDF file not found: {file_path}")
-
-            file_size = os.path.getsize(file_path)
-            logger.info(f"Processing PDF file: {file_size / 1024:.1f}KB")
-            
-            transactions = []
-            
-            try:
-                with pdfplumber.open(file_path) as pdf:
-                    if not pdf.pages:
-                        raise ValueError("PDF file has no pages")
-                    
-                    total_pages = len(pdf.pages)
-                    logger.info(f"Processing PDF with {total_pages} pages")
-                    
-                    # For large PDFs, limit the number of pages processed
-                    max_pages = 50 if total_pages > 50 else total_pages
-                    if total_pages > 50:
-                        logger.warning(f"Large PDF detected ({total_pages} pages). Processing first {max_pages} pages only.")
-                    
-                    for page_num in range(max_pages):
-                        try:
-                            page = pdf.pages[page_num]
-                            
-                            # Extract text with timeout protection
-                            text = page.extract_text()
-                            if not text or len(text.strip()) < 10:
-                                logger.warning(f"Page {page_num + 1} has insufficient text content")
-                                continue
-                            
-                            # Try to extract tables first (more reliable)
-                            tables = page.extract_tables()
-                            page_transactions = []
-                            
-                            if tables:
-                                for table in tables:
-                                    table_transactions = self._process_table_data(table)
-                                    page_transactions.extend(table_transactions)
-                                
-                                logger.info(f"Page {page_num + 1}: Found {len(page_transactions)} transactions from tables")
-                            
-                            # If no tables found, try text extraction with pattern matching
-                            if not page_transactions:
-                                page_transactions = self._extract_transactions_from_text(text)
-                                logger.info(f"Page {page_num + 1}: Found {len(page_transactions)} transactions from text")
-                            
-                            transactions.extend(page_transactions)
-                            
-                            # Progress logging for large PDFs
-                            if total_pages > 10:
-                                progress = ((page_num + 1) / max_pages) * 100
-                                logger.info(f"PDF processing progress: {progress:.1f}%")
-                                
-                        except Exception as e:
-                            logger.warning(f"Error processing page {page_num + 1}: {str(e)}")
-                            continue
-                            
-            except Exception as e:
-                raise ValueError(f"Error opening PDF file: {str(e)}")
-            
-            if not transactions:
-                raise ValueError("No transactions found in PDF file")
-            
-            logger.info(f"Successfully processed {len(transactions)} transactions from PDF")
-            return transactions
-            
-        except Exception as e:
-            raise Exception(f"Error processing PDF file: {str(e)}")
-    
-    def _process_table_data(self, table):
-        """Process table data extracted from PDF"""
-        transactions = []
-        if not table or len(table) < 2:  # Need at least header and one row
-            return transactions
-            
-        # Try to identify columns based on headers
-        headers = [str(h).strip().lower() for h in table[0] if h]
-        date_col = -1
-        amount_col = -1
-        desc_col = -1
-        
-        for idx, header in enumerate(headers):
-            if any(word in header for word in ['date', 'time', 'when']):
-                date_col = idx
-            elif any(word in header for word in ['amount', 'sum', 'total', 'price', 'payment']):
-                amount_col = idx
-            elif any(word in header for word in ['description', 'desc', 'details', 'transaction', 'particulars']):
-                desc_col = idx
-        
-        # Process each row
-        for row in table[1:]:
-            try:
-                if date_col >= 0 and amount_col >= 0 and desc_col >= 0:
-                    date_str = str(row[date_col]).strip()
-                    amount_str = str(row[amount_col]).strip()
-                    description = str(row[desc_col]).strip()
-                    
-                    if date_str and amount_str and description:
-                        # Create transaction using the same pattern as text extraction
-                        transaction = self._create_transaction(date_str, description, amount_str)
-                        if transaction:
-                            transactions.append(transaction)
-            except Exception as e:
-                logger.warning(f"Error processing table row: {str(e)}")
-                continue
-                
-        return transactions
-
-    def _extract_transactions_from_text(self, text):
-        """Extract transactions from PDF text using enhanced regex patterns"""
-        transactions = []
-        
-        # Enhanced patterns for bank statements
-        patterns = [
-            # Date + Description + Amount (various formats)
-            r'(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})\s+([^\s]+(?:\s+[^\s]+)*?)\s+([+-]?\$?[\d,]+\.?\d*)',
-            # Date + Amount + Description
-            r'(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})\s+([+-]?\$?[\d,]+\.?\d*)\s+([^\s]+(?:\s+[^\s]+)*?)',
-            # MM/DD format with year
-            r'(\d{1,2}/\d{1,2})\s+([^\s]+(?:\s+[^\s]+)*?)\s+([+-]?\$?[\d,]+\.?\d*)',
-            # Date with month names
-            r'(\w{3}\s+\d{1,2})\s+([^\s]+(?:\s+[^\s]+)*?)\s+([+-]?\$?[\d,]+\.?\d*)',
-        ]
-        
-        for pattern in patterns:
-            matches = re.finditer(pattern, text, re.IGNORECASE)
-            for match in matches:
-                try:
-                    if len(match.groups()) == 3:
-                        date_str, description, amount_str = match.groups()
-                    else:
-                        continue
-                    
-                    # Parse date
-                    date = self._parse_date(date_str)
-                    
-                    # Parse amount with currency detection
-                    amount, currency = self._parse_amount(amount_str)
-                    
-                    if date and amount is not None:
-                        category, confidence = self._categorize_transaction(description.strip())
-                                
-                        transaction = {
-                            'date': date.strftime('%Y-%m-%d'),
-                            'description': description.strip(),
-                            'amount': amount,
-                            'category': category,
-                            'confidence_score': confidence,
-                            'type': 'debit' if amount < 0 else 'credit',
-                            'currency': currency
-                        }
-                        transactions.append(transaction)
-                
-                except Exception as e:
-                    logger.debug(f"Error processing match: {str(e)}")
-                    continue
-        
-        return transactions
     
     def parse_transaction_row(self, row, index=None):
         """Parse CSV row into Transaction object"""

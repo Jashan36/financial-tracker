@@ -153,6 +153,14 @@ def initialize_processors():
         st.error(f"Failed to initialize processors: {str(e)}")
         return None
 
+# Helper function for currency formatting
+def format_currency(amount, currency='USD'):
+    """Format amount as currency"""
+    if currency == 'USD':
+        return f"${amount:,.2f}"
+    else:
+        return f"{amount:,.2f} {currency}"
+
 # Validation function
 def validate_transaction_data(transactions):
     """Comprehensive validation of transaction data"""
@@ -240,16 +248,8 @@ def process_uploaded_file(uploaded_file, transaction_processor):
             if not transactions:
                 raise Exception("Could not process CSV file with any supported encoding. Please check file format.")
                 
-        elif file_extension == 'pdf':
-            try:
-                logger.info("Processing PDF file")
-                transactions = transaction_processor.process_file(tmp_file_path)
-                logger.info("PDF processing completed")
-            except Exception as e:
-                logger.error(f"PDF processing failed: {e}")
-                raise Exception(f"Failed to process PDF file: {str(e)}")
         else:
-            raise Exception(f"Unsupported file type: {file_extension}")
+            raise Exception(f"Unsupported file type: {file_extension}. Only CSV files are supported.")
 
         if not transactions:
             raise Exception("No transactions found in the file. Please check file content.")
@@ -343,9 +343,9 @@ def main():
             # File upload
             st.subheader("📁 Upload Transactions")
             uploaded_file = st.file_uploader(
-                "Choose a CSV or PDF file",
-                type=['csv', 'pdf'],
-                help="Upload your bank statement or transaction file"
+                "Choose a CSV file",
+                type=['csv'],
+                help="Upload your bank statement CSV file"
             )
             
             if uploaded_file is not None:
@@ -435,13 +435,13 @@ def main():
             
             **Get started by uploading your transaction file:**
             
-            1. **📁 Upload File**: Use the sidebar to upload a CSV or PDF file
+            1. **📁 Upload File**: Use the sidebar to upload a CSV file
             2. **🔍 Analyze**: Click "Run Analysis" to get insights
             3. **📊 View Results**: Explore your financial data with interactive charts
             
             **Supported Features:**
             - ✅ Multi-currency support with automatic detection
-            - ✅ PDF and CSV file processing
+            - ✅ CSV file processing
             - ✅ Advanced categorization using AI
             - ✅ Budget recommendations
             - ✅ Interactive visualizations
@@ -483,7 +483,7 @@ def main():
                 
                 with col2:
                     total_amount = sum(abs(t.get('amount', 0)) for t in st.session_state.transactions)
-                    st.metric("Total Amount", f"{total_amount:,.2f} {st.session_state.primary_currency}")
+                    st.metric("Total Amount", format_currency(total_amount, st.session_state.primary_currency))
                 
                 with col3:
                     categories = len(set(t.get('category', 'unknown') for t in st.session_state.transactions))
@@ -557,15 +557,15 @@ def main():
                                 
                                 with col1:
                                     total_expenses = spending_analysis.get('total_expenses', 0)
-                                    st.metric("Total Expenses", f"{total_expenses:,.2f} {st.session_state.primary_currency}")
+                                    st.metric("Total Expenses", format_currency(total_expenses, st.session_state.primary_currency))
                                 
                                 with col2:
-                                    avg_daily = spending_analysis.get('average_daily_spending', 0)
-                                    st.metric("Average Daily", f"{avg_daily:,.2f} {st.session_state.primary_currency}")
+                                    avg_daily = spending_analysis.get('avg_daily_expense', 0)
+                                    st.metric("Average Daily", format_currency(avg_daily, st.session_state.primary_currency))
                                 
                                 with col3:
                                     monthly_income = spending_analysis.get('monthly_income', 0)
-                                    st.metric("Monthly Income", f"{monthly_income:,.2f} {st.session_state.primary_currency}")
+                                    st.metric("Monthly Income", format_currency(monthly_income, st.session_state.primary_currency))
                                 
                                 # Category breakdown with safe chart creation
                                 if 'category_breakdown' in spending_analysis:
@@ -577,9 +577,15 @@ def main():
                                         categories = []
                                         amounts = []
                                         
-                                        for category, amount in category_data.items():
-                                            if category and amount is not None:
+                                        for category, data in category_data.items():
+                                            if category and data is not None:
                                                 try:
+                                                    # Handle nested dictionary structure
+                                                    if isinstance(data, dict) and 'sum' in data:
+                                                        amount = data['sum']
+                                                    else:
+                                                        amount = data
+                                                    
                                                     # Ensure amount is numeric
                                                     numeric_amount = float(amount)
                                                     if not pd.isna(numeric_amount):
@@ -594,7 +600,8 @@ def main():
                                             fig = px.pie(
                                                 values=amounts,
                                                 names=categories,
-                                                title="Spending by Category"
+                                                title="Spending by Category",
+                                                labels={cat: f"${amount:,.0f}" for cat, amount in zip(categories, amounts)}
                                             )
                                             st.plotly_chart(fig, use_container_width=True)
                                             
@@ -603,7 +610,11 @@ def main():
                                                 x=categories,
                                                 y=amounts,
                                                 title="Spending by Category (Bar Chart)",
-                                                labels={'x': 'Category', 'y': f'Amount ({st.session_state.primary_currency})'}
+                                                labels={'x': 'Category', 'y': 'Amount ($)'}
+                                            )
+                                            # Format y-axis as currency
+                                            fig2.update_layout(
+                                                yaxis_tickformat='$,.0f'
                                             )
                                             st.plotly_chart(fig2, use_container_width=True)
                                         else:
@@ -643,7 +654,21 @@ def main():
                                 if alerts:
                                     st.subheader("🚨 Budget Alerts")
                                     for alert in alerts:
-                                        st.warning(alert)
+                                        if isinstance(alert, dict):
+                                            # Format dictionary alerts properly
+                                            category = alert.get('category', 'Unknown')
+                                            message = alert.get('message', 'No message')
+                                            severity = alert.get('severity', 'info')
+                                            
+                                            if severity == 'high':
+                                                st.error(f"🔴 **{category.title()}**: {message}")
+                                            elif severity == 'medium':
+                                                st.warning(f"🟡 **{category.title()}**: {message}")
+                                            else:
+                                                st.info(f"🔵 **{category.title()}**: {message}")
+                                        else:
+                                            # Handle string alerts
+                                            st.warning(str(alert))
                         
                     except Exception as e:
                         st.error(f"❌ Error displaying analysis results: {str(e)}")

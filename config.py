@@ -33,7 +33,7 @@ class Config:
     
     # File upload settings
     MAX_CONTENT_LENGTH = 100 * 1024 * 1024  # 100MB to accommodate larger files
-    ALLOWED_EXTENSIONS = {'.csv', '.pdf'}
+    ALLOWED_EXTENSIONS = {'.csv'}
     UPLOAD_FOLDER = BASE_DIR / 'uploads'  # Make sure uploads folder exists
     UPLOAD_FOLDER.mkdir(exist_ok=True)  # Create if it doesn't exist
     

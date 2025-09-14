@@ -1,10 +1,10 @@
 # Financial Tracker 💰
 
-A simple Streamlit app that categorizes your bank transactions and shows spending patterns. Upload a CSV or PDF file, get some basic charts and budget suggestions.
+A simple Streamlit app that categorizes your bank transactions and shows spending patterns. Upload a CSV file, get some basic charts and budget suggestions.
 
 ## What it actually does
 
-- **Uploads**: CSV or PDF bank statements
+- **Uploads**: CSV bank statements
 - **Categorizes**: Transactions using AI (scikit-learn + NLTK)
 - **Shows**: Basic spending charts and budget recommendations
 - **Converts**: Currency if you want (uses free exchange rate APIs)
@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 3. **Open browser**: Go to `http://localhost:8501`
 
-4. **Upload a file**: CSV or PDF with your transactions
+4. **Upload a file**: CSV with your transactions
 
 ## File Format
 
@@ -58,7 +58,6 @@ Your CSV should have columns like:
 - **Frontend**: Streamlit (Python web framework)
 - **Data**: Pandas for CSV processing
 - **Charts**: Plotly for visualizations
-- **PDF**: PDFPlumber for extracting text
 - **Currency**: Free exchange rate APIs
 - **AI/ML**: 
   - **scikit-learn**: TF-IDF vectorization + Naive Bayes classifier
@@ -101,7 +100,7 @@ docker run -p 8501:8501 financial-tracker
 - **Performance Optimization**: Chunked processing for large datasets, memory management
 
 ### **Data Processing Skills:**
-- **Multi-format Support**: CSV parsing with encoding detection, PDF text extraction
+- **CSV Support**: CSV parsing with encoding detection
 - **Data Validation**: Comprehensive input validation, error handling, data sanitization
 - **Currency Detection**: Regex-based pattern matching for 25+ currencies
 - **Data Transformation**: Pandas operations, data cleaning, type conversion
@@ -127,7 +126,7 @@ docker run -p 8501:8501 financial-tracker
 ### **For Recruiters - Key Technical Achievements:**
 1. **Implemented ML Pipeline**: TF-IDF + Naive Bayes with proper preprocessing
 2. **Built Full-Stack App**: Python backend + Streamlit frontend + Docker deployment
-3. **Handled Real Data**: Multi-format file processing with error handling
+3. **Handled Real Data**: CSV file processing with error handling
 4. **Production Practices**: Logging, configuration, testing, containerization
 5. **Performance Optimization**: Chunked processing, memory management, caching
 

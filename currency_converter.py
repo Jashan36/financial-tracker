@@ -11,7 +11,7 @@ import time
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
-from flask_caching import Cache
+# Cache functionality removed - using simple in-memory cache instead
 import pandas as pd
 
 logger = logging.getLogger(__name__)
@@ -28,8 +28,10 @@ class ExchangeRate:
 class CurrencyConverter:
     """Currency conversion service with live exchange rate fetching"""
     
-    def __init__(self, cache: Optional[Cache] = None):
-        self.cache = cache
+    def __init__(self, cache=None):
+        # Simple in-memory cache instead of Flask-Caching
+        self.cache = {} if cache is None else cache
+        self.cache_timeout = 3600  # 1 hour
         self.base_url = "https://api.exchangerate.host"
         self.fallback_rates = {
             # Common exchange rates (updated periodically)
@@ -172,10 +174,15 @@ class CurrencyConverter:
         # Try cache first
         if use_cache and self.cache:
             cache_key = f"exchange_rate_{from_currency}_{to_currency}"
-            cached_rate = self.cache.get(cache_key)
-            if cached_rate:
-                logger.debug(f"Using cached exchange rate: {from_currency} -> {to_currency} = {cached_rate}")
-                return cached_rate
+            if cache_key in self.cache:
+                cached_data = self.cache[cache_key]
+                # Check if cache is still valid (not expired)
+                if time.time() - cached_data['timestamp'] < self.cache_timeout:
+                    logger.debug(f"Using cached exchange rate: {from_currency} -> {to_currency} = {cached_data['rate']}")
+                    return cached_data['rate']
+                else:
+                    # Remove expired cache entry
+                    del self.cache[cache_key]
         
         # Try to fetch live rate
         try:
@@ -184,7 +191,10 @@ class CurrencyConverter:
                 # Cache the rate for 1 hour
                 if self.cache:
                     cache_key = f"exchange_rate_{from_currency}_{to_currency}"
-                    self.cache.set(cache_key, rate, timeout=3600)
+                    self.cache[cache_key] = {
+                        'rate': rate,
+                        'timestamp': time.time()
+                    }
                 logger.info(f"Fetched live exchange rate: {from_currency} -> {to_currency} = {rate}")
                 return rate
         except Exception as e:
